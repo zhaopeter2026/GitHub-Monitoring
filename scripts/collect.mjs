@@ -121,11 +121,16 @@ function section(title, subtitle, board, source) {
 }
 
 function html(report) {
-  return '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHub 每日情报 · ' + report.date + '</title><style>body{margin:0;background:#f8fafc;color:#101828;font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif}main{max-width:960px;margin:auto;padding:42px 20px 70px}header{border-bottom:1px solid #e4e7ec;padding-bottom:24px}h1{margin:0 0 8px;font-size:32px}h2{margin:36px 0 6px;font-size:22px}.meta,.subtitle{margin:0;color:#667085}.card{display:flex;gap:16px;margin-top:12px;padding:18px;background:#fff;border:1px solid #e4e7ec;border-radius:14px}.rank{min-width:38px;color:#155eef;font-size:20px}.card a{font-size:17px;font-weight:750;color:#155eef;text-decoration:none;word-break:break-all}.card p{margin:8px 0 12px;color:#475467;line-height:1.5}.metrics{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:13px}.metrics span{color:#667085}.metrics strong{color:#101828}.metrics .hot{color:#b42318}.card em{display:inline-block;margin-top:12px;padding:3px 8px;border-radius:999px;background:#eff4ff;color:#175cd3;font-style:normal;font-size:12px}.warning{padding:10px 12px;border:1px solid #fedf89;border-radius:8px;background:#fffaeb;color:#b54708}.empty{padding:16px;border:1px solid #e4e7ec;border-radius:10px;background:#fff;color:#667085}footer{margin-top:38px;padding-top:20px;border-top:1px solid #e4e7ec;color:#667085;font-size:13px}@media(max-width:560px){main{padding:28px 13px}.card{padding:14px;gap:10px}}</style></head><body><main><header><h1>GitHub 每日情报</h1><p class="meta">' + report.date + ' · 采集于 ' + report.collectedAtShanghai + '（北京时间）</p><p class="meta">排名由 GitHub Trending 的当日新增 Star 信号决定，AI 不参与排名。</p></header>' + section("今日全站热门 Top 10", "来源：GitHub Trending（daily）+ GitHub API 真实元数据", report.boards.full, report.sources.full) + section("今日中文热门 Top 10", "来源：GitHub Trending 中文候选；README/简介中文有效文本比例至少 12%，且至少 40 个中文字符", report.boards.chinese, report.sources.chinese) + '<footer>数据范围：公开 GitHub 数据。历史日报：<a href="./history/' + report.date + '.json">' + report.date + '</a></footer></main></body></html>';
+  return '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHub 每日情报 · ' + report.date + '</title><style>body{margin:0;background:#f8fafc;color:#101828;font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif}main{max-width:960px;margin:auto;padding:42px 20px 70px}header{border-bottom:1px solid #e4e7ec;padding-bottom:24px}h1{margin:0 0 8px;font-size:32px}h2{margin:36px 0 6px;font-size:22px}.meta,.subtitle{margin:0;color:#667085}.card{display:flex;gap:16px;margin-top:12px;padding:18px;background:#fff;border:1px solid #e4e7ec;border-radius:14px}.rank{min-width:38px;color:#155eef;font-size:20px}.card a{font-size:17px;font-weight:750;color:#155eef;text-decoration:none;word-break:break-all}.card p{margin:8px 0 12px;color:#475467;line-height:1.5}.metrics{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:13px}.metrics span{color:#667085}.metrics strong{color:#101828}.metrics .hot{color:#b42318}.card em{display:inline-block;margin-top:12px;padding:3px 8px;border-radius:999px;background:#eff4ff;color:#175cd3;font-style:normal;font-size:12px}.warning{padding:10px 12px;border:1px solid #fedf89;border-radius:8px;background:#fffaeb;color:#b54708}.empty{padding:16px;border:1px solid #e4e7ec;border-radius:10px;background:#fff;color:#667085}footer{margin-top:38px;padding-top:20px;border-top:1px solid #e4e7ec;color:#667085;font-size:13px}@media(max-width:560px){main{padding:28px 13px}.card{padding:14px;gap:10px}}</style></head><body><main><header><h1>GitHub 每日情报</h1><p class="meta">' + report.date + ' · 采集于 ' + report.collectedAtShanghai + '（北京时间）</p><p class="meta">排名由 GitHub Trending 的当日新增 Star 信号决定，AI 不参与排名。</p></header>' + section("今日全站热门 Top 10", "来源：GitHub Trending（daily）+ GitHub API 真实元数据", report.boards.full, report.sources.full) + section("今日中文热门 Top 10", "来源：GitHub Trending 中文候选；README/简介中文有效文本比例至少 12%，且至少 40 个中文字符", report.boards.chinese, report.sources.chinese) + '<section><h2>24h Star 增长 Top 10</h2><p class="subtitle">' + (report.baselineBuilding ? '正在建立首日基线；明日同一采集窗口后显示真实增长。' : '计算方式：当前 Star − 上一采集窗口 Star。') + '</p>' + (report.baselineBuilding ? '<p class="empty">正在建立首日基线</p>' : report.boards.starGrowth.map(projectCard).join("")) + '</section><section><h2>24h Fork 增长 Top 10</h2><p class="subtitle">' + (report.baselineBuilding ? '正在建立首日基线；明日同一采集窗口后显示真实增长。' : '计算方式：当前 Fork − 上一采集窗口 Fork。') + '</p>' + (report.baselineBuilding ? '<p class="empty">正在建立首日基线</p>' : report.boards.forkGrowth.map(projectCard).join("")) + '</section>' + '<footer>数据范围：公开 GitHub 数据。历史日报：<a href="./history/' + report.date + '.json">' + report.date + '</a></footer></main></body></html>';
 }
 
 const previous = await readJson(path.join(DATA, "latest.json"), null);
-const boards = { full: [], chinese: [] };
+const snapshotIndexFile = path.join(DATA, "snapshots", "index.json");
+const snapshotIndex = await readJson(snapshotIndexFile, []);
+const priorSnapshotEntry = snapshotIndex.find((item) => item.date !== DATE);
+const priorSnapshot = priorSnapshotEntry ? await readJson(path.join(DATA, "snapshots", priorSnapshotEntry.date + ".json"), null) : null;
+const priorMetrics = new Map(Object.entries(priorSnapshot?.repositories || {}));
+const boards = { full: [], chinese: [], starGrowth: [], forkGrowth: [] };
 const sources = { full: { ok: false, fallback: false, error: null }, chinese: { ok: false, fallback: false, error: null } };
 
 for (const [name, chinese] of [["full", false], ["chinese", true]]) {
@@ -142,13 +147,26 @@ for (const [name, chinese] of [["full", false], ["chinese", true]]) {
 }
 if (!sources.full.ok && !sources.chinese.ok && !previous) throw new Error("Both sources failed; no successful report was overwritten.");
 
+const allRepositories = [...new Map([...boards.full, ...boards.chinese].map((repo) => [repo.fullName, repo])).values()];
+for (const repo of allRepositories) {
+  const before = priorMetrics.get(repo.fullName);
+  repo.starGrowth24h = before ? repo.stars - before.stars : null;
+  repo.forkGrowth24h = before ? repo.forks - before.forks : null;
+}
+const growthRows = allRepositories.filter((repo) => repo.starGrowth24h !== null);
+boards.starGrowth = growthRows.slice().sort((a, b) => b.starGrowth24h - a.starGrowth24h || b.stars - a.stars).slice(0, TOP).map((repo, index) => ({ ...repo, rank: index + 1 }));
+boards.forkGrowth = growthRows.slice().sort((a, b) => b.forkGrowth24h - a.forkGrowth24h || b.forks - a.forks).slice(0, TOP).map((repo, index) => ({ ...repo, rank: index + 1 }));
+const baselineBuilding = !priorSnapshot;
+const snapshot = { date: DATE, collectedAt: new Date().toISOString(), repositories: Object.fromEntries(allRepositories.map((repo) => [repo.fullName, { stars: repo.stars, forks: repo.forks }])) };
 const report = {
-  schemaVersion: 1, phase: 1, date: DATE, collectedAt: new Date().toISOString(),
+  schemaVersion: 2, phase: 2, date: DATE, collectedAt: new Date().toISOString(),
   collectedAtShanghai: new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", dateStyle: "medium", timeStyle: "medium", hour12: false }).format(new Date()),
-  sources, boards,
+  sources, boards, baselineBuilding, candidateCounts: { trending: allRepositories.length },
   rules: { fullSort: "Trending daily 新增 Star 降序", chineseSort: "Trending 中文候选的 daily 新增 Star 降序", chineseRatioThreshold: CHINESE_RATIO, minChineseCharacters: MIN_HAN }
 };
 await saveJson(path.join(DATA, "latest.json"), report);
+await saveJson(path.join(DATA, "snapshots", DATE + ".json"), snapshot);
+await saveJson(snapshotIndexFile, [{ date: DATE, collectedAt: snapshot.collectedAt }, ...snapshotIndex.filter((item) => item.date !== DATE)]);
 await saveJson(path.join(DOCS, "history", DATE + ".json"), report);
 await mkdir(DOCS, { recursive: true });
 await writeFile(path.join(DOCS, "index.html"), html(report), "utf8");
