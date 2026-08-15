@@ -50,6 +50,12 @@ function parseTrending(html) {
   return [...new Map(result.map((item) => [item.fullName.toLowerCase(), item])).values()].slice(0, CANDIDATES);
 }
 
+async function searchCandidates(query, sort = "stars", perPage = 25) {
+  const response = await get("https://api.github.com/search/repositories?q=" + encodeURIComponent(query) + "&sort=" + sort + "&order=desc&per_page=" + perPage);
+  const payload = await response.json();
+  return (payload.items || []).map((item) => ({ fullName: item.full_name, todayStars: null, language: item.language || "", description: item.description || "" }));
+}
+
 async function getTrending(chinese) {
   const url = chinese ? "https://github.com/trending?since=daily&spoken_language_code=zh" : "https://github.com/trending?since=daily";
   const page = await get(url, "text/html");
@@ -80,7 +86,7 @@ async function enrich(candidate, checkChinese) {
   return {
     fullName: repo.full_name, url: repo.html_url, stars: repo.stargazers_count, forks: repo.forks_count,
     language: repo.language || candidate.language || "未标注", description: repo.description || candidate.description || "",
-    createdAt: repo.created_at, todayStars: candidate.todayStars,
+    createdAt: repo.created_at, todayStars: candidate.todayStars, topics: repo.topics || [],
     chineseProject: signal.han >= MIN_HAN && signal.ratio >= CHINESE_RATIO
   };
 }
@@ -147,7 +153,28 @@ for (const [name, chinese] of [["full", false], ["chinese", true]]) {
 }
 if (!sources.full.ok && !sources.chinese.ok && !previous) throw new Error("Both sources failed; no successful report was overwritten.");
 
-const allRepositories = [...new Map([...boards.full, ...boards.chinese].map((repo) => [repo.fullName, repo])).values()];
+const discovery = { ai: [], new: [], errors: [] };
+const seenDiscovery = new Set([...boards.full, ...boards.chinese].map((repo) => repo.fullName));
+async function enrichDiscovery(candidates, target) {
+  for (const candidate of candidates) {
+    if (seenDiscovery.has(candidate.fullName)) continue;
+    try { const repo = await enrich(candidate, false); seenDiscovery.add(repo.fullName); target.push(repo); } catch (error) { discovery.errors.push(candidate.fullName + ": " + error.message); }
+  }
+}
+try {
+  const aiCandidates = (await Promise.all(["topic:artificial-intelligence", "LLM in:name,description,readme", "MCP in:name,description,readme", "AI agent in:name,description,readme"].map((query) => searchCandidates(query)))).flat();
+  await enrichDiscovery(aiCandidates, discovery.ai);
+} catch (error) { discovery.errors.push("AI 候选池: " + error.message); }
+try {
+  const createdAfter = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
+  await enrichDiscovery(await searchCandidates("created:>" + createdAfter, "stars", 50), discovery.new);
+} catch (error) { discovery.errors.push("新项目候选池: " + error.message); }
+const allRepositories = [...new Map([...boards.full, ...boards.chinese, ...discovery.ai, ...discovery.new].map((repo) => [repo.fullName, repo])).values()];
+const aiTerms = { MCP: /\bmcp\b/i, RAG: /\brag\b|retrieval augmented/i, Agent: /\bagent\b/i, LLM: /\bllm\b|large language model|language model/i, "模型部署": /inference|serving|deployment/i, "开发工具": /copilot|coding|developer tool/i };
+for (const repo of allRepositories) {
+  const haystack = [repo.fullName, repo.description, ...(repo.topics || [])].join(" ");
+  repo.aiCategory = Object.entries(aiTerms).find(([, rule]) => rule.test(haystack))?.[0] || null;
+}
 for (const repo of allRepositories) {
   const before = priorMetrics.get(repo.fullName);
   repo.starGrowth24h = before ? repo.stars - before.stars : null;
@@ -157,11 +184,13 @@ const growthRows = allRepositories.filter((repo) => repo.starGrowth24h !== null)
 boards.starGrowth = growthRows.slice().sort((a, b) => b.starGrowth24h - a.starGrowth24h || b.stars - a.stars).slice(0, TOP).map((repo, index) => ({ ...repo, rank: index + 1 }));
 boards.forkGrowth = growthRows.slice().sort((a, b) => b.forkGrowth24h - a.forkGrowth24h || b.forks - a.forks).slice(0, TOP).map((repo, index) => ({ ...repo, rank: index + 1 }));
 const baselineBuilding = !priorSnapshot;
+boards.aiGrowth = allRepositories.filter((repo) => repo.aiCategory && repo.starGrowth24h !== null).sort((a, b) => b.starGrowth24h - a.starGrowth24h).slice(0, TOP).map((repo, index) => ({ ...repo, rank: index + 1 }));
+boards.newProjects = allRepositories.filter((repo) => repo.createdAt && Date.now() - new Date(repo.createdAt).getTime() <= 30 * 86400000).map((repo) => ({ ...repo, ageDays: Math.max(1, Math.ceil((Date.now() - new Date(repo.createdAt).getTime()) / 86400000)), estimatedVelocity: repo.starGrowth24h == null ? Math.round(repo.stars / Math.max(1, Math.ceil((Date.now() - new Date(repo.createdAt).getTime()) / 86400000)) * 10) / 10 : null })).sort((a, b) => (b.starGrowth24h ?? b.estimatedVelocity ?? 0) - (a.starGrowth24h ?? a.estimatedVelocity ?? 0)).slice(0, TOP).map((repo, index) => ({ ...repo, rank: index + 1 }));
 const snapshot = { date: DATE, collectedAt: new Date().toISOString(), repositories: Object.fromEntries(allRepositories.map((repo) => [repo.fullName, { stars: repo.stars, forks: repo.forks }])) };
 const report = {
   schemaVersion: 2, phase: 2, date: DATE, collectedAt: new Date().toISOString(),
   collectedAtShanghai: new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", dateStyle: "medium", timeStyle: "medium", hour12: false }).format(new Date()),
-  sources, boards, baselineBuilding, candidateCounts: { trending: allRepositories.length },
+  sources, boards, baselineBuilding, candidateCounts: { trending: boards.full.length + boards.chinese.length, aiSearch: discovery.ai.length, newProjectSearch: discovery.new.length }, discoveryWarnings: discovery.errors,
   rules: { fullSort: "Trending daily 新增 Star 降序", chineseSort: "Trending 中文候选的 daily 新增 Star 降序", chineseRatioThreshold: CHINESE_RATIO, minChineseCharacters: MIN_HAN }
 };
 await saveJson(path.join(DATA, "latest.json"), report);
@@ -173,4 +202,4 @@ await writeFile(path.join(DOCS, "index.html"), html(report), "utf8");
 const historyFile = path.join(DATA, "history", "index.json");
 const history = await readJson(historyFile, []);
 await saveJson(historyFile, [{ date: DATE, collectedAt: report.collectedAt, path: "history/" + DATE + ".json" }, ...history.filter((item) => item.date !== DATE)]);
-console.log("Generated " + DATE + ": " + boards.full.length + " global, " + boards.chinese.length + " Chinese projects.");
+console.log("Generated " + DATE + ": " + boards.full.length + " global, " + boards.chinese.length + " Chinese, " + boards.aiGrowth.length + " AI and " + boards.newProjects.length + " new projects.");
