@@ -2,8 +2,8 @@
   "schemaVersion": 2,
   "phase": 4,
   "date": "2026-08-15",
-  "collectedAt": "2026-08-15T11:44:36.011Z",
-  "collectedAtShanghai": "2026年8月15日 19:44:36",
+  "collectedAt": "2026-08-15T11:55:48.941Z",
+  "collectedAtShanghai": "2026年8月15日 19:55:48",
   "sources": {
     "full": {
       "ok": true,
@@ -21,7 +21,7 @@
       {
         "fullName": "cathrynlavery/diagram-design",
         "url": "https://github.com/cathrynlavery/diagram-design",
-        "stars": 17939,
+        "stars": 17950,
         "forks": 1073,
         "language": "HTML",
         "description": "29 editorial diagram types for Claude Code. Self-contained HTML + SVG. No shadows, no Mermaid-slop.",
@@ -37,8 +37,8 @@
       {
         "fullName": "public-apis/public-apis",
         "url": "https://github.com/public-apis/public-apis",
-        "stars": 459240,
-        "forks": 50771,
+        "stars": 459265,
+        "forks": 50772,
         "language": "Python",
         "description": "A collective list of free APIs",
         "createdAt": "2016-03-20T23:49:42Z",
@@ -64,7 +64,7 @@
       {
         "fullName": "github/spec-kit",
         "url": "https://github.com/github/spec-kit",
-        "stars": 128821,
+        "stars": 128827,
         "forks": 11519,
         "language": "Python",
         "description": "💫 Toolkit to help you get started with Spec-Driven Development",
@@ -85,8 +85,8 @@
       {
         "fullName": "cactus-compute/needle",
         "url": "https://github.com/cactus-compute/needle",
-        "stars": 5823,
-        "forks": 390,
+        "stars": 5828,
+        "forks": 391,
         "language": "Python",
         "description": "14MB foundation model for tiny devices; phones, wearables, smart home, and robots.",
         "createdAt": "2026-02-24T04:50:47Z",
@@ -107,7 +107,7 @@
       {
         "fullName": "cordiverse/cordis",
         "url": "https://github.com/cordiverse/cordis",
-        "stars": 3684,
+        "stars": 3690,
         "forks": 178,
         "language": "TypeScript",
         "description": "Meta-Framework of Spatiotemporal Composability",
@@ -128,7 +128,7 @@
       {
         "fullName": "unslothai/unsloth",
         "url": "https://github.com/unslothai/unsloth",
-        "stars": 71692,
+        "stars": 71696,
         "forks": 6470,
         "language": "Python",
         "description": "Local UI to run and train LLMs and diffusion models, including Qwen3.8, Kimi K3, MiniMax-H3, Gemma 4, DeepSeek-V4, FLUX and more.",
@@ -194,7 +194,7 @@
       {
         "fullName": "altic-dev/FluidVoice",
         "url": "https://github.com/altic-dev/FluidVoice",
-        "stars": 10152,
+        "stars": 10153,
         "forks": 687,
         "language": "Swift",
         "description": "Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model. A local Wispr Flow alternative. ⭐ helps a ton :) Windows & iOS waitlist open. Linux soon.",
@@ -217,8 +217,8 @@
       {
         "fullName": "MakazhanAlpamys/Soup",
         "url": "https://github.com/MakazhanAlpamys/Soup",
-        "stars": 1426,
-        "forks": 239,
+        "stars": 1428,
+        "forks": 240,
         "language": "Python",
         "description": "Fine-tune LLMs from one YAML. Layer streaming trains an 8B model on a 4 GB laptop GPU.",
         "createdAt": "2026-02-20T11:05:01Z",
@@ -254,7 +254,7 @@
       {
         "fullName": "citrolabs/ego-lite",
         "url": "https://github.com/citrolabs/ego-lite",
-        "stars": 10595,
+        "stars": 10601,
         "forks": 533,
         "language": "JavaScript",
         "description": "The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.",
@@ -283,7 +283,7 @@
       {
         "fullName": "521xueweihan/HelloGitHub",
         "url": "https://github.com/521xueweihan/HelloGitHub",
-        "stars": 170949,
+        "stars": 170950,
         "forks": 12595,
         "language": "Python",
         "description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
@@ -424,7 +424,7 @@
       {
         "fullName": "immersive-translate/immersive-translate",
         "url": "https://github.com/immersive-translate/immersive-translate",
-        "stars": 18471,
+        "stars": 18472,
         "forks": 1097,
         "language": "未标注",
         "description": "沉浸式双语网页翻译扩展 , 支持输入框翻译， 鼠标悬停翻译， PDF, Epub, 字幕文件, TXT 文件翻译 - Immersive Dual Web Page Translation Extension ",
@@ -499,8 +499,8 @@
       {
         "fullName": "deepseek-ai/deepseek-harness",
         "url": "https://github.com/deepseek-ai/deepseek-harness",
-        "stars": 107089,
-        "forks": 10271,
+        "stars": 107290,
+        "forks": 10286,
         "language": "TypeScript",
         "description": "DeepSeek Harness: Everything is a Plugin.",
         "createdAt": "2026-08-13T11:56:32Z",
@@ -516,14 +516,14 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 2,
-        "estimatedVelocity": 53544.5,
+        "estimatedVelocity": 53645,
         "rank": 1
       },
       {
         "fullName": "guillaumemeyer/watermarks-remover",
         "url": "https://github.com/guillaumemeyer/watermarks-remover",
-        "stars": 9132,
-        "forks": 930,
+        "stars": 9142,
+        "forks": 931,
         "language": "Python",
         "description": "Strip multi-vendor AI provenance marks: Unicode text hygiene, statistical rewrite hooks, and C2PA/metadata from PNG/JPEG/SVG/PDF/DOCX/HTML/MD",
         "createdAt": "2026-08-11T16:32:38Z",
@@ -542,13 +542,13 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 4,
-        "estimatedVelocity": 2283,
+        "estimatedVelocity": 2285.5,
         "rank": 2
       },
       {
         "fullName": "anywhere-labs/deepseek-harness-desktop",
         "url": "https://github.com/anywhere-labs/deepseek-harness-desktop",
-        "stars": 4202,
+        "stars": 4241,
         "forks": 177,
         "language": "TypeScript",
         "description": "为 DeepSeek Harness (DSH) 生态打造的现代化桌面端体验",
@@ -567,14 +567,14 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 2,
-        "estimatedVelocity": 2101,
+        "estimatedVelocity": 2120.5,
         "rank": 3
       },
       {
         "fullName": "xiaobright/dsh-anchored-standard",
         "url": "https://github.com/xiaobright/dsh-anchored-standard",
-        "stars": 1627,
-        "forks": 51,
+        "stars": 1645,
+        "forks": 53,
         "language": "JavaScript",
         "description": "Two-phase DeepSeek Harness preset: Minimal-aligned bootstrap, then full Standard tools (Project2 98/99)",
         "createdAt": "2026-08-14T14:06:39Z",
@@ -590,14 +590,14 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 1,
-        "estimatedVelocity": 1627,
+        "estimatedVelocity": 1645,
         "rank": 4
       },
       {
         "fullName": "awesome-dsh-plugin/awesome-dsh-plugin",
         "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-        "stars": 2280,
-        "forks": 426,
+        "stars": 2299,
+        "forks": 430,
         "language": "Python",
         "description": "A curated list of plugins for DeepSeek Harness (dsh) · DeepSeek Harness 插件精选列表",
         "createdAt": "2026-08-13T13:55:31Z",
@@ -614,13 +614,13 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 2,
-        "estimatedVelocity": 1140,
+        "estimatedVelocity": 1149.5,
         "rank": 5
       },
       {
         "fullName": "yjh051108/dsh-routing-suite",
         "url": "https://github.com/yjh051108/dsh-routing-suite",
-        "stars": 849,
+        "stars": 877,
         "forks": 18,
         "language": "PowerShell",
         "description": "dsh-routing-suite — injector + router-standard kit: install the runtime injector first, then the task-aware reasoning-mode router preset (measured P1-P23).",
@@ -632,14 +632,14 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 1,
-        "estimatedVelocity": 849,
+        "estimatedVelocity": 877,
         "rank": 6
       },
       {
         "fullName": "xoreaxeaxeax/skitter-creek-bath-salts",
         "url": "https://github.com/xoreaxeaxeax/skitter-creek-bath-salts",
-        "stars": 1626,
-        "forks": 131,
+        "stars": 1629,
+        "forks": 132,
         "language": "C",
         "description": "Unlocking _everything_ on the CPU with DRAM scrambling",
         "createdAt": "2026-08-13T13:50:42Z",
@@ -650,13 +650,13 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 2,
-        "estimatedVelocity": 813,
+        "estimatedVelocity": 814.5,
         "rank": 7
       },
       {
         "fullName": "zhu1090093659/dsh-web-ui",
         "url": "https://github.com/zhu1090093659/dsh-web-ui",
-        "stars": 2379,
+        "stars": 2387,
         "forks": 126,
         "language": "TypeScript",
         "description": "Plugin and skin collection for DeepSeek Harness (DSH) Web UI - task board, git graph, right-side panel, remote mobile UI, pet, live token stats, and skin center.",
@@ -673,13 +673,13 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 4,
-        "estimatedVelocity": 594.8,
+        "estimatedVelocity": 596.8,
         "rank": 8
       },
       {
         "fullName": "ccch1mneyyy/dsh-TUI",
         "url": "https://github.com/ccch1mneyyy/dsh-TUI",
-        "stars": 1112,
+        "stars": 1114,
         "forks": 47,
         "language": "TypeScript",
         "description": "解决DSH 官方尚无终端 TUI 痛点的补位之作，献给偏爱cli的各位极客：Claude Code 风格全屏交互终端插件——像素鲸鱼顶栏、实时工作状态行、思考流式展开、双击 Esc 回滚、上下文进度条 + TPS 仪表。npm 一键安装。",
@@ -701,7 +701,7 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 2,
-        "estimatedVelocity": 556,
+        "estimatedVelocity": 557,
         "rank": 9
       },
       {
@@ -749,7 +749,7 @@
         {
           "fullName": "sindresorhus/awesome",
           "url": "https://github.com/sindresorhus/awesome",
-          "stars": 495953,
+          "stars": 495955,
           "forks": 36397,
           "language": "未标注",
           "description": "😎 Awesome lists about all kinds of interesting topics",
@@ -800,7 +800,7 @@
         {
           "fullName": "awesome-selfhosted/awesome-selfhosted",
           "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
-          "stars": 312793,
+          "stars": 312794,
           "forks": 14684,
           "language": "未标注",
           "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
@@ -822,7 +822,7 @@
         {
           "fullName": "practical-tutorials/project-based-learning",
           "url": "https://github.com/practical-tutorials/project-based-learning",
-          "stars": 279261,
+          "stars": 279263,
           "forks": 35871,
           "language": "Python",
           "description": "Curated list of project-based tutorials",
@@ -844,8 +844,8 @@
         {
           "fullName": "jackfrued/Python-100-Days",
           "url": "https://github.com/jackfrued/Python-100-Days",
-          "stars": 185197,
-          "forks": 55689,
+          "stars": 185198,
+          "forks": 55690,
           "language": "Jupyter Notebook",
           "description": "Python - 100天从新手到大师",
           "createdAt": "2018-03-01T16:05:52Z",
@@ -907,8 +907,8 @@
         {
           "fullName": "jackfrued/Python-100-Days",
           "url": "https://github.com/jackfrued/Python-100-Days",
-          "stars": 185197,
-          "forks": 55689,
+          "stars": 185198,
+          "forks": 55690,
           "language": "Jupyter Notebook",
           "description": "Python - 100天从新手到大师",
           "createdAt": "2018-03-01T16:05:52Z",
@@ -922,8 +922,8 @@
         {
           "fullName": "jackfrued/Python-100-Days",
           "url": "https://github.com/jackfrued/Python-100-Days",
-          "stars": 185197,
-          "forks": 55689,
+          "stars": 185198,
+          "forks": 55690,
           "language": "Jupyter Notebook",
           "description": "Python - 100天从新手到大师",
           "createdAt": "2018-03-01T16:05:52Z",
@@ -948,7 +948,7 @@
         {
           "fullName": "Panniantong/Agent-Reach",
           "url": "https://github.com/Panniantong/Agent-Reach",
-          "stars": 71884,
+          "stars": 71888,
           "forks": 6103,
           "language": "Python",
           "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
@@ -979,7 +979,7 @@
         {
           "fullName": "NanmiCoder/MediaCrawler",
           "url": "https://github.com/NanmiCoder/MediaCrawler",
-          "stars": 62458,
+          "stars": 62460,
           "forks": 12171,
           "language": "Python",
           "description": "小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫  | 知乎问答文章｜评论爬虫",
