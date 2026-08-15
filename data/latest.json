@@ -2,8 +2,8 @@
   "schemaVersion": 2,
   "phase": 4,
   "date": "2026-08-15",
-  "collectedAt": "2026-08-15T10:55:00.784Z",
-  "collectedAtShanghai": "2026年8月15日 18:55:00",
+  "collectedAt": "2026-08-15T11:09:48.073Z",
+  "collectedAtShanghai": "2026年8月15日 19:09:48",
   "sources": {
     "full": {
       "ok": true,
@@ -21,7 +21,7 @@
       {
         "fullName": "cathrynlavery/diagram-design",
         "url": "https://github.com/cathrynlavery/diagram-design",
-        "stars": 17897,
+        "stars": 17906,
         "forks": 1073,
         "language": "HTML",
         "description": "29 editorial diagram types for Claude Code. Self-contained HTML + SVG. No shadows, no Mermaid-slop.",
@@ -37,7 +37,7 @@
       {
         "fullName": "public-apis/public-apis",
         "url": "https://github.com/public-apis/public-apis",
-        "stars": 459177,
+        "stars": 459206,
         "forks": 50766,
         "language": "Python",
         "description": "A collective list of free APIs",
@@ -67,8 +67,8 @@
       {
         "fullName": "github/spec-kit",
         "url": "https://github.com/github/spec-kit",
-        "stars": 128793,
-        "forks": 11515,
+        "stars": 128804,
+        "forks": 11517,
         "language": "Python",
         "description": "💫 Toolkit to help you get started with Spec-Driven Development",
         "createdAt": "2025-08-21T22:54:31Z",
@@ -91,8 +91,8 @@
       {
         "fullName": "cactus-compute/needle",
         "url": "https://github.com/cactus-compute/needle",
-        "stars": 5813,
-        "forks": 389,
+        "stars": 5819,
+        "forks": 390,
         "language": "Python",
         "description": "14MB foundation model for tiny devices; phones, wearables, smart home, and robots.",
         "createdAt": "2026-02-24T04:50:47Z",
@@ -113,8 +113,8 @@
       {
         "fullName": "cordiverse/cordis",
         "url": "https://github.com/cordiverse/cordis",
-        "stars": 3654,
-        "forks": 174,
+        "stars": 3662,
+        "forks": 175,
         "language": "TypeScript",
         "description": "Meta-Framework of Spatiotemporal Composability",
         "createdAt": "2022-05-17T18:52:57Z",
@@ -134,7 +134,7 @@
       {
         "fullName": "unslothai/unsloth",
         "url": "https://github.com/unslothai/unsloth",
-        "stars": 71677,
+        "stars": 71680,
         "forks": 6469,
         "language": "Python",
         "description": "Local UI to run and train LLMs and diffusion models, including Qwen3.8, Kimi K3, MiniMax-H3, Gemma 4, DeepSeek-V4, FLUX and more.",
@@ -171,8 +171,8 @@
       {
         "fullName": "megadose/holehe",
         "url": "https://github.com/megadose/holehe",
-        "stars": 12969,
-        "forks": 1730,
+        "stars": 12970,
+        "forks": 1731,
         "language": "Python",
         "description": "holehe allows you to check if the mail is used on different sites like twitter, instagram and will retrieve information on sites with the forgotten password function.",
         "createdAt": "2020-06-25T23:03:02Z",
@@ -203,7 +203,7 @@
       {
         "fullName": "altic-dev/FluidVoice",
         "url": "https://github.com/altic-dev/FluidVoice",
-        "stars": 10142,
+        "stars": 10147,
         "forks": 687,
         "language": "Swift",
         "description": "Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model. A local Wispr Flow alternative. ⭐ helps a ton :) Windows & iOS waitlist open. Linux soon.",
@@ -226,7 +226,7 @@
       {
         "fullName": "MakazhanAlpamys/Soup",
         "url": "https://github.com/MakazhanAlpamys/Soup",
-        "stars": 1403,
+        "stars": 1410,
         "forks": 238,
         "language": "Python",
         "description": "Fine-tune LLMs from one YAML. Layer streaming trains an 8B model on a 4 GB laptop GPU.",
@@ -263,7 +263,7 @@
       {
         "fullName": "citrolabs/ego-lite",
         "url": "https://github.com/citrolabs/ego-lite",
-        "stars": 10575,
+        "stars": 10579,
         "forks": 532,
         "language": "JavaScript",
         "description": "The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.",
@@ -292,7 +292,7 @@
       {
         "fullName": "521xueweihan/HelloGitHub",
         "url": "https://github.com/521xueweihan/HelloGitHub",
-        "stars": 170943,
+        "stars": 170945,
         "forks": 12594,
         "language": "Python",
         "description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
@@ -313,7 +313,7 @@
       {
         "fullName": "ruanyf/weekly",
         "url": "https://github.com/ruanyf/weekly",
-        "stars": 100410,
+        "stars": 100411,
         "forks": 4353,
         "language": "未标注",
         "description": "科技爱好者周刊，每周五发布",
@@ -419,7 +419,7 @@
       {
         "fullName": "MaaAssistantArknights/MaaAssistantArknights",
         "url": "https://github.com/MaaAssistantArknights/MaaAssistantArknights",
-        "stars": 22556,
+        "stars": 22555,
         "forks": 2787,
         "language": "C#",
         "description": "《明日方舟》小助手，全日常一键长草！| A one-click tool for the daily tasks of Arknights, supporting all clients.",
@@ -514,8 +514,8 @@
       {
         "fullName": "deepseek-ai/deepseek-harness",
         "url": "https://github.com/deepseek-ai/deepseek-harness",
-        "stars": 106290,
-        "forks": 10203,
+        "stars": 106528,
+        "forks": 10226,
         "language": "TypeScript",
         "description": "DeepSeek Harness: Everything is a Plugin.",
         "createdAt": "2026-08-13T11:56:32Z",
@@ -531,14 +531,14 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 2,
-        "estimatedVelocity": 53145,
+        "estimatedVelocity": 53264,
         "rank": 1
       },
       {
         "fullName": "guillaumemeyer/watermarks-remover",
         "url": "https://github.com/guillaumemeyer/watermarks-remover",
-        "stars": 9082,
-        "forks": 926,
+        "stars": 9098,
+        "forks": 928,
         "language": "Python",
         "description": "Strip multi-vendor AI provenance marks: Unicode text hygiene, statistical rewrite hooks, and C2PA/metadata from PNG/JPEG/SVG/PDF/DOCX/HTML/MD",
         "createdAt": "2026-08-11T16:32:38Z",
@@ -557,14 +557,14 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 4,
-        "estimatedVelocity": 2270.5,
+        "estimatedVelocity": 2274.5,
         "rank": 2
       },
       {
         "fullName": "anywhere-labs/deepseek-harness-desktop",
         "url": "https://github.com/anywhere-labs/deepseek-harness-desktop",
-        "stars": 4028,
-        "forks": 172,
+        "stars": 4091,
+        "forks": 173,
         "language": "TypeScript",
         "description": "为 DeepSeek Harness (DSH) 生态打造的现代化桌面端体验",
         "createdAt": "2026-08-13T16:30:50Z",
@@ -582,13 +582,13 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 2,
-        "estimatedVelocity": 2014,
+        "estimatedVelocity": 2045.5,
         "rank": 3
       },
       {
         "fullName": "firecrawl/anydoc",
         "url": "https://github.com/firecrawl/anydoc",
-        "stars": 16184,
+        "stars": 16187,
         "forks": 893,
         "language": "Rust",
         "description": "Convert Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV, and PDF to clean Markdown. Built in Rust, with Node.js and Python bindings.",
@@ -600,14 +600,14 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 12,
-        "estimatedVelocity": 1348.7,
+        "estimatedVelocity": 1348.9,
         "rank": 4
       },
       {
         "fullName": "awesome-dsh-plugin/awesome-dsh-plugin",
         "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-        "stars": 2215,
-        "forks": 411,
+        "stars": 2235,
+        "forks": 416,
         "language": "Python",
         "description": "A curated list of plugins for DeepSeek Harness (dsh) · DeepSeek Harness 插件精选列表",
         "createdAt": "2026-08-13T13:55:31Z",
@@ -624,13 +624,13 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 2,
-        "estimatedVelocity": 1107.5,
+        "estimatedVelocity": 1117.5,
         "rank": 5
       },
       {
         "fullName": "yc-software/qm",
         "url": "https://github.com/yc-software/qm",
-        "stars": 13586,
+        "stars": 13585,
         "forks": 1599,
         "language": "TypeScript",
         "description": "Multiplayer agent harness for work.",
@@ -647,14 +647,14 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 17,
-        "estimatedVelocity": 799.2,
+        "estimatedVelocity": 799.1,
         "rank": 6
       },
       {
         "fullName": "zhu1090093659/dsh-web-ui",
         "url": "https://github.com/zhu1090093659/dsh-web-ui",
-        "stars": 2338,
-        "forks": 122,
+        "stars": 2354,
+        "forks": 125,
         "language": "TypeScript",
         "description": "Plugin and skin collection for DeepSeek Harness (DSH) Web UI - task board, git graph, right-side panel, remote mobile UI, pet, live token stats, and skin center.",
         "createdAt": "2026-08-12T05:15:20Z",
@@ -670,7 +670,7 @@
         "starGrowth24h": null,
         "forkGrowth24h": null,
         "ageDays": 4,
-        "estimatedVelocity": 584.5,
+        "estimatedVelocity": 588.5,
         "rank": 7
       },
       {
