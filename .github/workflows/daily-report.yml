@@ -1,6 +1,11 @@
 name: Generate daily GitHub report
 
 on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "docs/**"
+      - "data/**"
   schedule:
     # 08:17 Beijing time (UTC+8), intentionally off the hour.
     - cron: "17 0 * * *"
