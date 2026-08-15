@@ -18,7 +18,7 @@ permissions:
 
 concurrency:
   group: github-daily-report
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   generate:
