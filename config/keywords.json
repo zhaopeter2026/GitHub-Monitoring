@@ -1,0 +1,10 @@
+{
+  "presets": [
+    "Vue",
+    "Python",
+    "量化",
+    "爬虫"
+  ],
+  "perKeywordCandidates": 25,
+  "description": "网页端可在当日预采集候选池中手动筛选；每天按预设词调用 GitHub Search API 刷新候选池。"
+}
