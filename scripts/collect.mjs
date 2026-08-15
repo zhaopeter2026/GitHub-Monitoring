@@ -157,11 +157,18 @@ for (const [name, chinese] of [["full", false], ["chinese", true]]) {
 if (!sources.full.ok && !sources.chinese.ok && !previous) throw new Error("Both sources failed; no successful report was overwritten.");
 
 const discovery = { ai: [], new: [], custom: {}, errors: [] };
-const seenDiscovery = new Set([...boards.full, ...boards.chinese].map((repo) => repo.fullName));
+const enrichmentCache = new Map([...boards.full, ...boards.chinese].map((repo) => [repo.fullName.toLowerCase(), repo]));
 async function enrichDiscovery(candidates, target) {
+  const poolSeen = new Set();
   for (const candidate of candidates) {
-    if (seenDiscovery.has(candidate.fullName)) continue;
-    try { const repo = await enrich(candidate, false); seenDiscovery.add(repo.fullName); target.push(repo); } catch (error) { discovery.errors.push(candidate.fullName + ": " + error.message); }
+    const key = candidate.fullName.toLowerCase();
+    if (poolSeen.has(key)) continue;
+    poolSeen.add(key);
+    try {
+      const repo = enrichmentCache.get(key) || await enrich(candidate, false);
+      enrichmentCache.set(key, repo);
+      target.push({ ...repo });
+    } catch (error) { discovery.errors.push(candidate.fullName + ": " + error.message); }
   }
 }
 try {
