@@ -120,7 +120,9 @@ function projectCard(repo) {
   const hot = repo.todayStars == null ? "未提供" : "+" + repo.todayStars.toLocaleString();
   const starGrowth = repo.starGrowth24h == null ? "基线中" : (repo.starGrowth24h >= 0 ? "+" : "") + repo.starGrowth24h.toLocaleString();
   const forkGrowth = repo.forkGrowth24h == null ? "基线中" : (repo.forkGrowth24h >= 0 ? "+" : "") + repo.forkGrowth24h.toLocaleString();
-  return '<article class="card"><b class="rank">#' + repo.rank + '</b><div><a href="' + esc(repo.url) + '" target="_blank" rel="noreferrer">' + esc(repo.fullName) + '</a><p>' + esc(repo.description || "暂无仓库简介") + '</p><div class="metrics"><span>Star <strong>' + repo.stars.toLocaleString() + '</strong></span><span>Fork <strong>' + repo.forks.toLocaleString() + '</strong></span><span>今日热度 <strong class="hot">' + hot + '</strong></span><span>' + esc(repo.language) + '</span><span>创建于 ' + age + '</span></div><em>' + (repo.chineseProject ? "中文项目" : "公开项目") + '</em></div></article>';
+  const category = repo.aiCategory ? '<em>' + esc(repo.aiCategory) + '</em>' : "";
+  const estimate = repo.estimatedVelocity == null ? "" : '<span>估算 Star/日 <strong>' + repo.estimatedVelocity.toLocaleString() + '</strong></span>';
+  return '<article class="card"><b class="rank">#' + repo.rank + '</b><div><a href="' + esc(repo.url) + '" target="_blank" rel="noreferrer">' + esc(repo.fullName) + '</a><p>' + esc(repo.description || "暂无仓库简介") + '</p><div class="metrics"><span>Star <strong>' + repo.stars.toLocaleString() + '</strong></span><span>Fork <strong>' + repo.forks.toLocaleString() + '</strong></span><span>24h Star <strong class="hot">' + starGrowth + '</strong></span><span>24h Fork <strong>' + forkGrowth + '</strong></span><span>今日热度 <strong class="hot">' + hot + '</strong></span>' + estimate + '<span>' + esc(repo.language) + '</span><span>创建于 ' + age + '</span></div><em>' + (repo.chineseProject ? "中文项目" : "公开项目") + '</em>' + category + '</div></article>';
 }
 
 function section(title, subtitle, board, source) {
@@ -199,7 +201,7 @@ boards.newProjects = allRepositories.filter((repo) => repo.createdAt && Date.now
 boards.customKeywords = Object.fromEntries(Object.entries(discovery.custom).map(([keyword, candidates]) => [keyword, candidates.filter((repo) => repo.starGrowth24h !== null).sort((a, b) => b.starGrowth24h - a.starGrowth24h || b.stars - a.stars).slice(0, TOP).map((repo, index) => ({ ...repo, rank: index + 1 }))]));
 const snapshot = { date: DATE, collectedAt: new Date().toISOString(), repositories: Object.fromEntries(allRepositories.map((repo) => [repo.fullName, { stars: repo.stars, forks: repo.forks }])) };
 const report = {
-  schemaVersion: 2, phase: 2, date: DATE, collectedAt: new Date().toISOString(),
+  schemaVersion: 2, phase: 4, date: DATE, collectedAt: new Date().toISOString(),
   collectedAtShanghai: new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", dateStyle: "medium", timeStyle: "medium", hour12: false }).format(new Date()),
   sources, boards, baselineBuilding, candidateCounts: { trending: boards.full.length + boards.chinese.length, aiSearch: discovery.ai.length, newProjectSearch: discovery.new.length, customKeywordSearch: Object.fromEntries(Object.entries(discovery.custom).map(([keyword, rows]) => [keyword, rows.length])) }, discoveryWarnings: discovery.errors,
   rules: { fullSort: "Trending daily 新增 Star 降序", chineseSort: "Trending 中文候选的 daily 新增 Star 降序", chineseRatioThreshold: CHINESE_RATIO, minChineseCharacters: MIN_HAN }
