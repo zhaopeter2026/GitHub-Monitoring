@@ -6,9 +6,6 @@ on:
     paths-ignore:
       - "docs/**"
       - "data/**"
-  schedule:
-    # 08:17 Beijing time (UTC+8), intentionally off the hour.
-    - cron: "17 0 * * *"
   workflow_dispatch:
 
 permissions:
