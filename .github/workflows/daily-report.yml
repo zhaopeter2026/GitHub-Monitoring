@@ -1,11 +1,6 @@
 name: Generate daily GitHub report
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - "docs/**"
-      - "data/**"
   workflow_dispatch:
 
 permissions:
